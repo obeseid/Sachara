@@ -1,5 +1,0 @@
--- LocalScript
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-player:Kick("You are not allowed to use Sachara's scripts")
