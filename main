@@ -1,0 +1,23 @@
+-- sachara mod
+local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local screenGui = nil
+
+-- Wait until a ScreenGui containing a Frame appears
+while not screenGui do
+    for _, child in ipairs(PlayerGui:GetChildren()) do
+        if child.Name == "ScreenGui" and child:FindFirstChild("Frame") then
+            screenGui = child
+            break
+        end
+    end
+    if not screenGui then
+        task.wait(0.1)
+    end
+end
+
+-- modding
+screenGui.ResetOnSpawn = false
+screenGui.Frame.Size = UDim2.new(0.2, 0, 0.4, 0)
+screenGui.Frame.Frame.TextButton:Destroy()
+screenGui.Frame.Frame.TextLabel.Text = "sachara's spin"
